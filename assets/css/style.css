@@ -1,0 +1,50 @@
+body{
+	background: #eb6864;
+	padding: 5px;
+	font-family: 'VT323', monospace;
+
+}
+.container{
+	width: 75%;
+	margin: 0 auto;
+	height: 100%;
+}
+.col{
+	width: 49%;
+	height: 1500px;
+	display: block;
+	float: left;
+	border: 5px dashed #e0e4cc;
+	border-radius: 30px;
+}
+.padding{
+	padding: 40px;
+}
+.padding-sm{
+	padding: 10px;
+}
+.text-center{
+	text-align: center;
+}
+#heading{
+	font-size: 240px;
+	margin: 0px auto;
+	color: #e0e4cc;
+	text-align: center;
+}
+#sb-logo{
+	width: 800px;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	top: -50px;
+}
+#answer-img{
+	display: block;
+	margin: 0 auto;
+}
+.text-lg{
+	font-size: 60px;
+}
+
+
