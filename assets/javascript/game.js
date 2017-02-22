@@ -48,7 +48,7 @@ hiddenWord();
 document.onkeyup = function(event){
 
 var guess = event.key;
-//this function restarts the game
+//this function resets the game components
 function restart(){
 	if (guess === "Enter"){
 		currentWord = words[Math.floor(Math.random() * words.length)];
@@ -70,6 +70,7 @@ for(var b = 0; b < wordLength; b++){
 		currentWordOutput.innerHTML = output.join("");
 	}
 };
+
 restart();
 
 //results for when the user loses
@@ -90,7 +91,8 @@ if(output.join("") === currentWord) {
 	guessesRemain = 13;
 	displayGuessRemain();
 }
-
+//if statements that monitor the remaining guesses as well
+//as the letters that were already guessed
 if(lettersInside.indexOf(guess) === -1 && lettersGuessed.indexOf(guess) === -1){
 	guessesRemain--;
 }
