@@ -8,45 +8,53 @@
 	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
 </head>
 <body>
+	<!-- header container -->
 	<div class="container">
 		<header>
-		<div>
-			<p id="heading">Hangman</p>
-			<img src="assets/images/smash-bros.jpg" alt="smash bros" id="sb-logo">
-		</div>
+			<div>
+				<p id="heading">Hangman</p>
+				<img src="assets/images/smash-bros.jpg" alt="smash bros" id="sb-logo">
+			</div>
 		</header>
 	</div>
+	<!-- end of header container -->
+	<!-- section container -->
 	<div class="container">
-	<div class="padding-sm text-center">
-	<span id="answer-text"></span>
-		
-	</div>
+		<!-- answer text area -->
+		<div class="padding-sm text-center">
+			<span id="answer-text">Lets Play!</span>
+		</div>
+		<!-- end of answer text area -->
 		<section>
+			<!-- 1st column -->
 			<div class="col">
 				<div class="padding">
-					<img src="assets/images/smash-bros2.jpg" alt="answer image" width="80%" id="answer-img">
+					<img src="assets/images/smash-bros2.jpg" alt="answer image" id="answer-img">
 				</div>
 			</div>
+			<!-- end of 1st column -->
+			<!-- 2nd column -->
 			<div class="col">
 				<div class="padding-sm">
-				<div class="text-center text-lg">
-					<h3>Press any key to get started!</h3>
-					<h4>Press Enter to pick a new word</h4>
-					<h3>Wins</h3>
-					<span id="win-output">0</span>
-					<h3>Current Word</h3>
-					<span id="current-word"></span>
-					<h3>Guesses Remaining</h3>
-					<span id="guess-rem-output">13</span>
-					<h3>Letters Guessed Already</h3>
-					<span id="lett-guess-output"></span>
-				</div>
+					<div class="text-center text-lg">
+						<h3>Press any key to get started!</h3>
+						<h4>Press Enter to pick a new word</h4>
+						<h3>Wins</h3>
+						<span id="win-output">0</span>
+						<h3>Current Word</h3>
+						<span id="current-word"></span>
+						<h3>Guesses Remaining</h3>
+						<span id="guess-rem-output">13</span>
+						<h3>Letters Guessed Already</h3>
+						<span id="lett-guess-output"></span>
+					</div>
 				</div>
 			</div>
-
+			<!-- end of 2nd column -->
 		</section>
 	</div>
+	<!-- end of section container -->
 	<script type="text/javascript" src="assets/javascript/game.js"></script>
-		
+	
 </body>
 </html>
