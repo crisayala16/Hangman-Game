@@ -46,5 +46,8 @@ body{
 .text-lg{
 	font-size: 60px;
 }
+#answer-text{
+	font-size: 80px;
+}
 
 
