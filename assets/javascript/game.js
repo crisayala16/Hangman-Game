@@ -22,22 +22,28 @@ var truOrFls = [];
 //as well as stores placeholders for the output array.
 function hiddenWord(){
 	for(var f = 0; f < wordLength; f++){
-	wordLength = currentWord.length;
-	lettersInside.push(currentWord.charAt(f));
-	output.push("_");
-	currentWordOutput.innerHTML += "_";
+		wordLength = currentWord.length;
+		lettersInside.push(currentWord.charAt(f));
+		output.push("_");
+		currentWordOutput.innerHTML += "_";
+	}
 }
-};
 //displays the image corresponding to the answer
 function displayImg(image){
-		answerImg.src ="assets/images/"+ image + ".jpg";
-};
+	answerImg.src ="assets/images/"+ image + ".jpg";
+}
 //displays the answer once the user wins
 function displayText(text){
 	answerText.innerHTML = text.toUpperCase();
 }
-
+function displayGuessRemain(){
+	guessRemOutput.innerHTML = guessesRemain;
+}
+function displaylettersGuessed(){
+	lettGuessOutput.innerHTML = lettersGuessed;
+}
 hiddenWord();
+
 //Everything inside this fuction is invoked when a key is pressed
 document.onkeyup = function(event){
 
@@ -45,36 +51,35 @@ var guess = event.key;
 //this function restarts the game
 function restart(){
 	if (guess === "Enter"){
-	currentWord = words[Math.floor(Math.random() * words.length)];
-	guessRemOutput.innerHTML = 13;
-	guessesRemain = 13;
-	lettersInside = [];
-	output = [];
-	currentWordOutput.innerHTML = "";
-	hiddenWord();
-	lettersGuessed = [];
-	lettGuessOutput.innerHTML = "";
+		currentWord = words[Math.floor(Math.random() * words.length)];
+		guessesRemain = 13;
+		guessRemOutput.innerHTML = guessesRemain;
+		lettersInside = [];
+		output = [];
+		currentWordOutput.innerHTML = "";
+		hiddenWord();
+		lettersGuessed = [];
+		displaylettersGuessed();
 	}
 }
-//this causes every guess to be stored inside an array
-console.log(lettersGuessed);
+
 //checks if guess equals any of the letters in lettersInside array
 for(var b = 0; b < wordLength; b++){
-if (guess === lettersInside[b]){
-output[b] = lettersInside[b];
-
-currentWordOutput.innerHTML = output.join("");
-}
+	if (guess === lettersInside[b]){
+		output[b] = lettersInside[b];
+		currentWordOutput.innerHTML = output.join("");
+	}
 };
 restart();
+
 //results for when the user loses
 if(guessesRemain === 0){
 	alert("Game Over")
 	guessRemOutput.innerHTML = 13;
 	guessesRemain = 13;
 	location.reload();
+}
 
-};
 //results for when the user wins
 if(output.join("") === currentWord) {
 	win++;
@@ -82,6 +87,12 @@ if(output.join("") === currentWord) {
 	displayImg(currentWord);
 	displayText(currentWord);
 	output = [];
+	guessesRemain = 13;
+	displayGuessRemain();
+}
+
+if(lettersInside.indexOf(guess) === -1 && lettersGuessed.indexOf(guess) === -1){
+	guessesRemain--;
 }
 
 if (lettersGuessed.indexOf(guess) === 0) {
@@ -89,15 +100,12 @@ if (lettersGuessed.indexOf(guess) === 0) {
 }
 else if(lettersGuessed.indexOf(guess) === -1){
 	lettersGuessed.push(guess);
-	guessesRemain--;
 }
+
 if (lettersGuessed.indexOf("Enter") === 0) {
 	lettersGuessed.splice(0, 1);
 	guessesRemain++;
 }
-guessRemOutput.innerHTML = guessesRemain;
-lettGuessOutput.innerHTML = lettersGuessed;
-console.log(truOrFls[0]);
+displayGuessRemain();
+displaylettersGuessed();
 }
-console.log(currentWord);
-console.log("here");
