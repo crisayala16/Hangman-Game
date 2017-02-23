@@ -43,6 +43,7 @@ function displaylettersGuessed(){
 	lettGuessOutput.innerHTML = lettersGuessed;
 }
 hiddenWord();
+alert("Open up the console to see what the current word is");
 
 //Everything inside this fuction is invoked when a key is pressed
 document.onkeyup = function(event){
@@ -60,6 +61,7 @@ function restart(){
 		hiddenWord();
 		lettersGuessed = [];
 		displaylettersGuessed();
+		console.log("The current word is " + currentWord);
 	}
 }
 
@@ -111,3 +113,4 @@ if (lettersGuessed.indexOf("Enter") === 0) {
 displayGuessRemain();
 displaylettersGuessed();
 }
+console.log("The current word is " + currentWord);
