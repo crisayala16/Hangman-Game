@@ -113,3 +113,4 @@ displayGuessRemain();
 displaylettersGuessed();
 }
 console.log("The current word is " + currentWord);
+//woo hoo I finished!
