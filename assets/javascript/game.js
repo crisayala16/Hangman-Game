@@ -43,7 +43,6 @@ function displaylettersGuessed(){
 	lettGuessOutput.innerHTML = lettersGuessed;
 }
 hiddenWord();
-alert("Open up the console to see what the current word is");
 
 //Everything inside this fuction is invoked when a key is pressed
 document.onkeyup = function(event){
